@@ -2,7 +2,32 @@ body{
     background-color: #faf3e0;
 }
 
-h1{
+.titulo{
     text-align: center;
-    color: #00542b;
+    color: #00452b;
+    font-size: 60px;
+}
+
+.titulo-2{
+    text-align: center;
+    color: #6b0f1a;
+    font-size: 60px;
+}
+
+.subtitulo{
+    text-align: center;
+    color: #00452b;
+    font-size: 30px;
+}
+
+.descricao{
+    text-align: center;
+    font-size: 20px;
+    color: black;
+}
+
+.cardapio{
+    text-align: center;
+    color: red;
+    font-size: 25px;
 }
