@@ -68,17 +68,59 @@ button{
 }
 
 .cardapio{
+    font-size: 42px;
+    line-height: 1.2;
     margin-bottom: 80px;
-    background-color: #00452b;
-    color: white;
+    color: #005029;
+    text-align: center;
     padding: 80px 20px;
 }
 
 .hospitalidade{
-    margin-bottom: 80px;
-    background-color:  #6b0f1a;
+    background-color: #005029;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 80px 100px;
+}
+
+.hospitalidade-texto{
+    max-width: 500px;
+}
+
+.hospitalidade-titulo{
+    color: #f1b83a;
+
+    font-size: 42px;
+    line-height: 1.2;
+
+    margin-bottom: 25px;
+}
+
+.hospitalidade-texto p{
     color: white;
-    padding: 80px 20px;
+
+    font-size: 22px;
+    line-height: 1.7;
+}
+
+.hospitalidade-imagem{
+    width: 500px;
+    height: 320px;
+
+    object-fit: cover;
+
+    margin-left: 50px;
+}
+
+.fale-conosco{
+    font-size: 42px;
+    line-height: 1.2;
+
+    text-align: center;
+    color: #00542b;
 }
 
 .contato-box{
@@ -109,6 +151,15 @@ button{
     background-color: #c79a3b;
 }
 
+.entrada-imagem{
+    width: 500px;
+    height: 320px;
+
+    object-fit: cover;
+
+    margin-left: 50px;
+}
+
 footer{
     background-color: #00452b;
     color: white;
@@ -116,8 +167,20 @@ footer{
     text-align: center;
 }
 
+footer i{
+    font-size: 32px;
+    margin: 0 15px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+footer i:hover{
+    transform: scale(1.1);
+}
+
 .texto-footer{
     font-size: 12px;
     opacity: 0.7;
-    margin: 0;
+    margin: 10;
 }
