@@ -3,6 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Villa Imperialle</title>
@@ -10,40 +18,116 @@
 
 <body>
 
-    <header class="menu">
+<header class="menu">
+    <img src="villa-imperialle.png" alt="Villa Imperialle" class="logo">
 
-    </header>
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Cardápio</a>
+        <a href="#">Sobre Nós</a>
+        <a href="#">Reserva</a>
+    </nav>
+
+</header>
 
     <section class="inicio">
 
+        <img src="banner.png" class="banner-fundo">
+
+    <div class="conteudo">
         <h1 class="titulo">VILLA<br></h1>
         <h1 class="titulo-2">IMPERIALLE</h1>
         <P class="subtitulo">Restaurante Italiano</P>
 
-        <p class="descricao">Um Restaurante Italiano Sofisticado Que Mistura Receitas Clássicas
-            Com Apresentações Sofisticadas
-            Ideal Para Famílias, Encontros E Casais</p>
+        <p class="descricao">Um restaurante italiano sofisticado que mistura receitas clássicas
+            com apresentações sofisticadas ideal. 
+        </p>
+        
+        <p class="descricao">Para famílias, encontros e casais.</p>
 
         <button>Conheça Nosso Cardápio</button>
-
+    </div>
     </section>
 
     <section class="cardapio">
-
         <h2>NOSSO CARDAPIO</h2>
+        
+        <section class="cardapio-grid">
+
+    <div class="card-prato">
+        <img src="spaghetti.avif" alt="Spaghetti">
+    </div>
+
+    <div class="card-prato">
+        <img src="pizza.webp" alt="Pizza">
+    </div>
+
+    <div class="card-prato">
+        <img src="carne.webp" alt="Carne">
+    </div>
+
+    <div class="card-prato">
+        <img src="nata.jpg" alt="Nata">
+    </div>
+
+</section>
+
     </section>
 
     <section class="hospitalidade">
-        <h3>SABOR, TRADIÇÃO E HOSPITALIDADE</h3>
-    </section>
 
-    <section class="contato">
+    <div class="hospitalidade-texto">
+        <h3 class="hospitalidade-titulo">
+            SABOR, TRADIÇÃO<br>
+            E HOSPITALIDADE
+        </h3>
 
-        <h4>FALE CONOSCO</h4>
-    </section>
+        <p>
+            Cada prato é preparado com ingredientes
+            selecionados e com muito amor, para proporcionar
+            uma experiência inesquecível
+        </p>
+    </div>
 
+    <img class="hospitalidade-imagem"
+         src="estabelecimento.png"
+         alt="Estabelecimento">
+
+</section>
+
+    <h4 class="fale-conosco">FALE CONOSCO</h4>
+    <section class="contato-box">
+
+    <div class="info">
+        <i class="fa-brands fa-whatsapp"></i>
+        <p>(55) 00 00000-0000</p>
+    </div>
+
+    <div class="linha"></div>
+
+    <div class="info">
+        <i class="fa-solid fa-location-dot"></i>
+        <p>Rua Alcides Mourão, 1153</p>
+        <span>Macaé - RJ</span>
+    </div>
+
+    <div class="linha"></div>
+
+    <div class="info">
+        <i class="fa-regular fa-clock"></i>
+        <p>Ter a Dom: 11h às 23h</p>
+        <span>Segunda: Fechado</span>
+    </div>
+
+    <img class="entrada-imagem"
+        src="entrada.png"
+        alt="Entrada">
+</section>
     <footer>
-
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-whatsapp"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <p class="texto-footer">© Villa Imperialle. Todos os direitos reservados.</p>
     </footer>
 </body>
 
