@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -7,128 +7,193 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="style.css">
+
     <title>Villa Imperialle</title>
 </head>
 
 <body>
 
-<header class="menu">
-    <img src="villa-imperialle.png" alt="Villa Imperialle" class="logo">
 
-    <nav>
-        <a href="#">Início</a>
-        <a href="#">Cardápio</a>
-        <a href="#">Sobre Nós</a>
-        <a href="#">Reserva</a>
-    </nav>
+    <header class="menu">
 
-</header>
+        <img src="imagens/villa-imperialle.png" alt="Villa Imperialle" class="logo">
 
-    <section class="inicio">
+        <nav class="menu-links">
 
-        <img src="banner.png" class="banner-fundo">
+            <a href="#inicio">
+                <i class="fa-solid fa-house"></i>
+                INÍCIO
+            </a>
 
-    <div class="conteudo">
-        <h1 class="titulo">VILLA<br></h1>
-        <h1 class="titulo-2">IMPERIALLE</h1>
-        <P class="subtitulo">Restaurante Italiano</P>
+            <a href="#cardapio">
+                <i class="fa-solid fa-star"></i>
+                MAIS VENDIDOS
+            </a>
 
-        <p class="descricao">Um restaurante italiano sofisticado que mistura receitas clássicas
-            com apresentações sofisticadas ideal. 
-        </p>
-        
-        <p class="descricao">Para famílias, encontros e casais.</p>
+            <a href="#sobre">
+                <i class="fa-solid fa-circle-info"></i>
+                SOBRE NÓS
+            </a>
 
-        <button>Conheça Nosso Cardápio</button>
-    </div>
+            <a href="cardapio.html">
+                <i class="fa-solid fa-utensils"></i>
+                CARDÁPIO
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <section id="inicio" class="inicio">
+
+        <img src="imagens/banner.png" alt="Banner Villa Imperialle" class="banner-fundo">
+
+        <div class="conteudo">
+
+            <h1 class="titulo-principal verde">
+                VILLA
+            </h1>
+
+            <h1 class="titulo-principal vinho">
+                IMPERIALLE
+            </h1>
+
+            <p class="subtitulo">
+                Restaurante Italiano
+            </p>
+
+            <p class="descricao">
+                Um restaurante italiano sofisticado que mistura receitas clássicas
+                com apresentações sofisticadas ideal.
+                <br>
+                Para famílias, encontros e casais.
+            </p>
+
+            <a href="cardapio.html" class="botao">
+                Conheça Nosso Cardápio
+            </a>
+
+        </div>
+
     </section>
 
-    <section class="cardapio">
-        <h2>NOSSO CARDAPIO</h2>
-        
-        <section class="cardapio-grid">
 
-    <div class="card-prato">
-        <img src="spaghetti.avif" alt="Spaghetti">
-    </div>
+    <section id="vendidos" class="vendidos">
 
-    <div class="card-prato">
-        <img src="pizza.webp" alt="Pizza">
-    </div>
+        <h2>MAIS VENDIDOS</h2>
 
-    <div class="card-prato">
-        <img src="carne.webp" alt="Carne">
-    </div>
+        <div class="vendidos-grid">
 
-    <div class="card-prato">
-        <img src="nata.jpg" alt="Nata">
-    </div>
+            <div class="card-prato">
+                <img src="imagens/spaghetti.avif" alt="Spaghetti">
+            </div>
 
-</section>
+            <div class="card-prato">
+                <img src="imagens/pizza.webp" alt="Pizza">
+            </div>
+
+            <div class="card-prato">
+                <img src="imagens/carne.webp" alt="Carne">
+            </div>
+
+            <div class="card-prato">
+                <img src="imagens/nata.jpg" alt="Sobremesa">
+            </div>
+
+        </div>
 
     </section>
 
-    <section class="hospitalidade">
 
-    <div class="hospitalidade-texto">
-        <h3 class="hospitalidade-titulo">
-            SABOR, TRADIÇÃO<br>
-            E HOSPITALIDADE
-        </h3>
+    <section id="sobre" class="sobre">
 
-        <p>
-            Cada prato é preparado com ingredientes
-            selecionados e com muito amor, para proporcionar
-            uma experiência inesquecível
-        </p>
-    </div>
+        <div class="sobre-texto">
 
-    <img class="hospitalidade-imagem"
-         src="estabelecimento.png"
-         alt="Estabelecimento">
+            <h3 class="sobre-titulo">
+                SABOR, TRADIÇÃO
+                <br>
+                E HOSPITALIDADE
+            </h3>
 
-</section>
+            <p>
+                Cada prato é preparado com ingredientes
+                selecionados e com muito amor, para proporcionar
+                uma experiência inesquecível.
+            </p>
 
-    <h4 class="fale-conosco">FALE CONOSCO</h4>
+        </div>
+
+        <img src="imagens/estabelecimento.png" alt="Estabelecimento" class="sobre-imagem imagem-lateral">
+
+    </section>
+
+
+    <h4 class="fale-conosco">
+        FALE CONOSCO
+    </h4>
+
     <section class="contato-box">
 
-    <div class="info">
-        <i class="fa-brands fa-whatsapp"></i>
-        <p>(55) 00 00000-0000</p>
-    </div>
+        <div class="info">
 
-    <div class="linha"></div>
+            <i class="fa-brands fa-whatsapp"></i>
 
-    <div class="info">
-        <i class="fa-solid fa-location-dot"></i>
-        <p>Rua Alcides Mourão, 1153</p>
-        <span>Macaé - RJ</span>
-    </div>
+            <p>(55) 00 00000-0000</p>
 
-    <div class="linha"></div>
+        </div>
 
-    <div class="info">
-        <i class="fa-regular fa-clock"></i>
-        <p>Ter a Dom: 11h às 23h</p>
-        <span>Segunda: Fechado</span>
-    </div>
+        <div class="linha"></div>
 
-    <img class="entrada-imagem"
-        src="entrada.png"
-        alt="Entrada">
-</section>
+        <div class="info">
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            <p>Rua Alcides Mourão, 1153</p>
+
+            <span>Macaé - RJ</span>
+
+        </div>
+
+        <div class="linha"></div>
+
+        <div class="info">
+
+            <i class="fa-regular fa-clock"></i>
+
+            <p>Ter a Dom: 11h às 23h</p>
+
+            <span>Segunda: Fechado</span>
+
+        </div>
+
+        <img src="imagens/entrada.png" alt="Entrada do restaurante" class="entrada-imagem imagem-lateral">
+
+    </section>
+
+
     <footer>
+
         <i class="fa-brands fa-instagram"></i>
+
         <i class="fa-brands fa-whatsapp"></i>
+
         <i class="fa-brands fa-facebook"></i>
-        <p class="texto-footer">© Villa Imperialle. Todos os direitos reservados.</p>
+
+        <p class="texto-footer">
+            © Villa Imperialle. Todos os direitos reservados.
+        </p>
+
     </footer>
+
 </body>
 
 </html>
