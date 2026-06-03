@@ -1,6 +1,7 @@
 html, body{
     height: 100%;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -12,8 +13,30 @@ body{
 }
 
 .inicio{
-    margin-bottom: 80px;
+    position: relative;
+    min-height: 700px;
 }
+
+.banner-fundo{
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 1;
+}
+
+.conteudo{
+    position: relative;
+    z-index: 2;
+
+    text-align: center;
+    padding-top: 150px;
+}
+
 .titulo{
     text-align: center;
     color: #00452b;
