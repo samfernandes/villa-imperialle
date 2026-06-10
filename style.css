@@ -63,7 +63,8 @@ a {
     justify-content: space-between;
     align-items: center;
 
-    padding: 12px 60px;
+    height: 90px;
+    padding: 10px 60px;
 
     background: var(--creme);
 
@@ -73,7 +74,9 @@ a {
 }
 
 .logo {
-    width: 75px;
+    width: 165px;
+    height: auto;
+    margin-top: 7%;
 }
 
 .menu-links {
