@@ -9,14 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Pizzas | Villa Imperialle</title>
+    <title>Bebidas | Villa Imperialle</title>
 </head>
 
 <body>
 
     <header class="menu">
 
-        <img src="imagens/villa-imperialle.png" alt="Villa Imperialle" class="logo">
+        <img src="imagens/villa-imperialle.png"
+             alt="Villa Imperialle"
+             class="logo">
 
         <nav class="menu-links">
 
@@ -46,11 +48,14 @@
 
     <section class="banner-cardapio">
 
-        <img src="imagens/banner.png" alt="Banner Villa Imperialle">
+        <img src="imagens/banner.png"
+             alt="Banner Villa Imperialle">
 
         <div class="banner-texto">
 
-            <h1>Pizzas</h1>
+            <h1>
+                Bebidas
+            </h1>
 
             <p>
                 Receitas italianas tradicionais preparadas com ingredientes selecionados.
@@ -65,15 +70,30 @@
         <aside class="categorias">
 
             <div class="categoria-ativa">
-                Massas
+                Bebidas
             </div>
 
-            <a href="cardapio-pizzas.html">Pizzas</a>
-            <a href="cardapio-sobremesas.html">Sobremesas</a>
-            <a href="cardapio-bebidas.html">Bebidas</a>
+            <a href="cardapio-massas.html">
+                Massas
+            </a>
 
-            <a href="#" class="botao">
+            <a href="cardapio-pizzas.html">
+                Pizzas
+            </a>
+
+            <a href="cardapio-sobremesas.html">
+                Sobremesas
+            </a>
+
+            <a href="cardapio-bebidas.html">
+                Bebidas
+            </a>
+
+            <a href="pedido.html"
+               class="botao">
+
                 Ver Pedido
+
             </a>
 
         </aside>
@@ -82,26 +102,38 @@
 
             <div class="topo-pratos">
 
-                <h2>MASSAS</h2>
-                
+                <h2>
+                    BEBIDAS
+                </h2>
+
             </div>
 
             <div class="grid-pratos">
 
                 <div class="card-cardapio">
 
-                    <img src="imagens/aperol-spritz-bebidas-tipicas-da-italia.jpg" alt="Spaghetti">
+                    <img src="imagens/aperol-spritz-bebidas-tipicas-da-italia.jpg"
+                         alt="Aperol Spritz">
 
                     <div class="card-info">
 
-                        <h3>Aperol Spritz</h3>
+                        <h3>
+                            Aperol Spritz
+                        </h3>
 
                         <p class="preco">
                             R$ 49,90
                         </p>
 
-                        <button class="botao-card">
+                        <button class="botao-card"
+                                onclick="adicionarCarrinho(
+                                10,
+                                'Aperol Spritz',
+                                49.90,
+                                'imagens/aperol-spritz-bebidas-tipicas-da-italia.jpg')">
+
                             Adicionar ao Carrinho
+
                         </button>
 
                     </div>
@@ -110,18 +142,28 @@
 
                 <div class="card-cardapio">
 
-                    <img src="imagens/negroni-bebidas-tipicas-da-italia.jpg" alt="Fettuccine">
+                    <img src="imagens/negroni-bebidas-tipicas-da-italia.jpg"
+                         alt="Negroni">
 
                     <div class="card-info">
 
-                        <h3>Negroni</h3>
+                        <h3>
+                            Negroni
+                        </h3>
 
                         <p class="preco">
                             R$ 54,90
                         </p>
 
-                        <button class="botao-card">
+                        <button class="botao-card"
+                                onclick="adicionarCarrinho(
+                                11,
+                                'Negroni',
+                                54.90,
+                                'imagens/negroni-bebidas-tipicas-da-italia.jpg')">
+
                             Adicionar ao Carrinho
+
                         </button>
 
                     </div>
@@ -130,18 +172,28 @@
 
                 <div class="card-cardapio">
 
-                    <img src="imagens/quor-franciacorta.jpg" alt="Lasanha">
+                    <img src="imagens/quor-franciacorta.jpg"
+                         alt="Franciacorta">
 
                     <div class="card-info">
 
-                        <h3>Franciacorta</h3>
+                        <h3>
+                            Franciacorta
+                        </h3>
 
                         <p class="preco">
                             R$ 59,90
                         </p>
 
-                        <button class="botao-card">
+                        <button class="botao-card"
+                                onclick="adicionarCarrinho(
+                                12,
+                                'Franciacorta',
+                                59.90,
+                                'imagens/quor-franciacorta.jpg')">
+
                             Adicionar ao Carrinho
+
                         </button>
 
                     </div>
@@ -154,10 +206,28 @@
 
     </section>
 
+    <div class="mini-carrinho">
+
+        <a href="pedido.html">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <span id="contador-carrinho">
+
+                0
+
+            </span>
+
+        </a>
+
+    </div>
+
     <footer>
 
         <i class="fa-brands fa-instagram"></i>
+
         <i class="fa-brands fa-whatsapp"></i>
+
         <i class="fa-brands fa-facebook"></i>
 
         <p class="texto-footer">
@@ -165,6 +235,8 @@
         </p>
 
     </footer>
+
+    <script src="carrinho.js"></script>
 
 </body>
 

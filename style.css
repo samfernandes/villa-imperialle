@@ -85,23 +85,14 @@ a {
     gap: 35px;
 }
 
-.menu-links a {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    color: var(--verde);
-
-    font-size: 15px;
-    font-weight: 700;
-
-    letter-spacing: .5px;
-
+.menu-links a{
     transition: .3s;
 }
 
-.menu-links a:hover {
+.menu-links a:hover{
     color: var(--dourado);
+
+    transform: translateY(-2px);
 }
 
 .menu-links i {
@@ -189,6 +180,27 @@ a {
     padding: 20px;
 }
 
+.card-prato,
+.card-cardapio{
+    background: white;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    transition: .3s ease;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+}
+
+.card-prato:hover,
+.card-cardapio:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,.15);
+}
+
 .card-prato img {
     width: 100%;
     height: 220px;
@@ -198,6 +210,32 @@ a {
     object-fit: cover;
 
     border-radius: 8px;
+}
+
+.card-prato{
+    background: white;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+
+    text-align: center;
+}
+
+.card-prato h3{
+    margin: 20px 15px 10px;
+
+    color: var(--verde);
+
+    font-size: 24px;
+}
+
+.card-prato p{
+    margin: 0 20px 20px;
+
+    color: #555;
+
+    font-size: 16px;
+
+    line-height: 1.5;
 }
 
 .sobre {
@@ -450,15 +488,174 @@ footer i:hover {
 .botao-card{
     width: 100%;
 
-    padding: 10px;
+    padding: 15px;
+
+    background-color: var(--verde);
+
+    color: white;
 
     border: none;
+    border-radius: 10px;
 
-    border-radius: 20px;
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.botao-card:hover{
+    background-color: #00663f;
+
+    transform: scale(1.03);
+
+    box-shadow: 0 8px 20px rgba(0,69,43,.3);
+}
+
+.botao:hover{
+    background-color: #00663f;
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 10px 20px rgba(0,69,43,.25);
+}
+
+.mini-carrinho{
+
+    position: fixed;
+
+    right: 30px;
+    bottom: 30px;
+
+    z-index: 999;
+
+}
+
+.mini-carrinho a{
+
+    position: relative;
+
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--vinho);
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 28px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.3);
+
+    transition: .3s;
+
+}
+
+.mini-carrinho a:hover{
+
+    transform: scale(1.1);
+
+}
+
+#contador-carrinho{
+
+    position: absolute;
+
+    top: -5px;
+    right: -5px;
+
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: red;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+.item-pedido{
+
+    background: white;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.1);
+
+}
+
+.item-pedido button{
+
+    padding: 8px 12px;
+
+    border: none;
 
     background: var(--verde);
 
     color: white;
 
+    border-radius: 8px;
+
     cursor: pointer;
+
+}
+
+.pedido-total{
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    color: var(--verde);
+
+    margin-top: 40px;
+
+}
+
+.formulario-pedido{
+
+    margin-top: 50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+}
+
+.formulario-pedido input{
+
+    padding: 18px;
+
+    border-radius: 10px;
+
+    border: 1px solid #ddd;
+
+    font-size: 16px;
+
 }

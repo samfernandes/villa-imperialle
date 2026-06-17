@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pedido | Villa Imperialle</title>
+</head>
+
+<body>
+
+<header class="menu">
+
+    <img src="imagens/villa-imperialle.png"
+         alt="Villa Imperialle"
+         class="logo">
+
+    <nav class="menu-links">
+
+        <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            INÍCIO
+        </a>
+
+        <a href="cardapio-massas.html">
+            <i class="fa-solid fa-utensils"></i>
+            CARDÁPIO
+        </a>
+
+    </nav>
+
+</header>
+
+
+<section class="area-cardapio">
+
+    <main class="area-pratos">
+
+        <div class="topo-pratos">
+
+            <h2>
+                SEU PEDIDO
+            </h2>
+
+        </div>
+
+
+        <div id="lista-pedido">
+
+        </div>
+
+
+        <div class="pedido-total">
+
+            Total:
+
+            <span id="valor-total">
+                R$ 0,00
+            </span>
+
+        </div>
+
+
+        <div class="formulario-pedido">
+
+            <h3>Dados para entrega</h3>
+
+            <input
+                type="text"
+                id="nome"
+                placeholder="Nome">
+
+            <input
+                type="text"
+                id="telefone"
+                placeholder="Telefone">
+
+            <input
+                type="text"
+                id="endereco"
+                placeholder="Endereço">
+
+            <button
+                class="botao"
+                onclick="finalizarPedido()">
+
+                Finalizar Pedido
+
+            </button>
+
+        </div>
+
+    </main>
+
+</section>
+
+
+<footer>
+
+    <i class="fa-brands fa-instagram"></i>
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+    <i class="fa-brands fa-facebook"></i>
+
+    <p class="texto-footer">
+        © Villa Imperialle. Todos os direitos reservados.
+    </p>
+
+</footer>
+
+<script src="pedido.js"></script>
+
+</body>
+
+</html>

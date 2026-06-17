@@ -16,7 +16,9 @@
 
     <header class="menu">
 
-        <img src="imagens/villa-imperialle.png" alt="Villa Imperialle" class="logo">
+        <img src="imagens/villa-imperialle.png"
+             alt="Villa Imperialle"
+             class="logo">
 
         <nav class="menu-links">
 
@@ -46,7 +48,8 @@
 
     <section class="banner-cardapio">
 
-        <img src="imagens/banner.png" alt="Banner Villa Imperialle">
+        <img src="imagens/banner.png"
+             alt="Banner Villa Imperialle">
 
         <div class="banner-texto">
 
@@ -68,12 +71,27 @@
                 Massas
             </div>
 
-            <a href="cardapio-pizzas.html">Pizzas</a>
-            <a href="cardapio-sobremesas.html">Sobremesas</a>
-            <a href="cardapio-bebidas.html">Bebidas</a>
+            <a href="cardapio-massas.html">
+                Massas
+            </a>
 
-            <a href="#" class="botao">
+            <a href="cardapio-pizzas.html">
+                Pizzas
+            </a>
+
+            <a href="cardapio-sobremesas.html">
+                Sobremesas
+            </a>
+
+            <a href="cardapio-bebidas.html">
+                Bebidas
+            </a>
+
+            <a href="pedido.html"
+               class="botao">
+
                 Ver Pedido
+
             </a>
 
         </aside>
@@ -83,25 +101,33 @@
             <div class="topo-pratos">
 
                 <h2>MASSAS</h2>
-                
+
             </div>
 
             <div class="grid-pratos">
 
                 <div class="card-cardapio">
 
-                    <img src="imagens/penne-ao-Molho-Arrabbiata.jpg" alt="Spaghetti">
+                    <img src="imagens/penne-ao-Molho-Arrabbiata.jpg"
+                         alt="Penne ao Molho Arrabbiata">
 
                     <div class="card-info">
 
-                        <h3>Penne Ao Molho Arrabbiata</h3>
+                        <h3>Penne ao Molho Arrabbiata</h3>
 
                         <p class="preco">
                             R$ 49,90
                         </p>
 
-                        <button class="botao-card">
+                        <button class="botao-card"
+                                onclick="adicionarCarrinho(
+                                1,
+                                'Penne ao Molho Arrabbiata',
+                                49.90,
+                                'imagens/penne-ao-Molho-Arrabbiata.jpg')">
+
                             Adicionar ao Carrinho
+
                         </button>
 
                     </div>
@@ -110,18 +136,26 @@
 
                 <div class="card-cardapio">
 
-                    <img src="imagens/Bucatini-ao-Molho-Amatriciana.jpg" alt="Fettuccine">
+                    <img src="imagens/Bucatini-ao-Molho-Amatriciana.jpg"
+                         alt="Bucatini ao Molho Amatriciana">
 
                     <div class="card-info">
 
-                        <h3>Bucatini Ao Molho Amatriciana</h3>
+                        <h3>Bucatini ao Molho Amatriciana</h3>
 
                         <p class="preco">
                             R$ 54,90
                         </p>
 
-                        <button class="botao-card">
+                        <button class="botao-card"
+                                onclick="adicionarCarrinho(
+                                2,
+                                'Bucatini ao Molho Amatriciana',
+                                54.90,
+                                'imagens/Bucatini-ao-Molho-Amatriciana.jpg')">
+
                             Adicionar ao Carrinho
+
                         </button>
 
                     </div>
@@ -130,7 +164,8 @@
 
                 <div class="card-cardapio">
 
-                    <img src="imagens/lasanha.jpg" alt="Lasanha">
+                    <img src="imagens/lasanha.jpg"
+                         alt="Lasanha à Bolonhesa">
 
                     <div class="card-info">
 
@@ -140,8 +175,15 @@
                             R$ 59,90
                         </p>
 
-                        <button class="botao-card">
+                        <button class="botao-card"
+                                onclick="adicionarCarrinho(
+                                3,
+                                'Lasanha à Bolonhesa',
+                                59.90,
+                                'imagens/lasanha.jpg')">
+
                             Adicionar ao Carrinho
+
                         </button>
 
                     </div>
@@ -154,10 +196,28 @@
 
     </section>
 
+    <div class="mini-carrinho">
+
+        <a href="pedido.html">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <span id="contador-carrinho">
+
+                0
+
+            </span>
+
+        </a>
+
+    </div>
+
     <footer>
 
         <i class="fa-brands fa-instagram"></i>
+
         <i class="fa-brands fa-whatsapp"></i>
+
         <i class="fa-brands fa-facebook"></i>
 
         <p class="texto-footer">
@@ -165,6 +225,8 @@
         </p>
 
     </footer>
+
+    <script src="carrinho.js"></script>
 
 </body>
 

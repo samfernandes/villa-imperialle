@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Pizzas | Villa Imperialle</title>
+    <title>Sobremesas | Villa Imperialle</title>
 </head>
 
 <body>
@@ -50,7 +50,7 @@
 
         <div class="banner-texto">
 
-            <h1>Pizzas</h1>
+            <h1>Sobremesas</h1>
 
             <p>
                 Receitas italianas tradicionais preparadas com ingredientes selecionados.
@@ -65,14 +65,15 @@
         <aside class="categorias">
 
             <div class="categoria-ativa">
-                Massas
+                Sobremesas
             </div>
 
+            <a href="cardapio-massas.html">Massas</a>
             <a href="cardapio-pizzas.html">Pizzas</a>
             <a href="cardapio-sobremesas.html">Sobremesas</a>
             <a href="cardapio-bebidas.html">Bebidas</a>
 
-            <a href="#" class="botao">
+            <a href="pedido.html" class="botao">
                 Ver Pedido
             </a>
 
@@ -82,15 +83,15 @@
 
             <div class="topo-pratos">
 
-                <h2>MASSAS</h2>
-                
+                <h2>SOBREMESAS</h2>
+
             </div>
 
             <div class="grid-pratos">
 
                 <div class="card-cardapio">
 
-                    <img src="imagens/Canolli(canudinhos).jpg" alt="Spaghetti">
+                    <img src="imagens/Canolli(canudinhos).jpg" alt="Canolli canudinhos">
 
                     <div class="card-info">
 
@@ -100,8 +101,15 @@
                             R$ 49,90
                         </p>
 
-                        <button class="botao-card">
+                        <button class="botao-card"
+                                onclick="adicionarCarrinho(
+                                7,
+                                'Canolli canudinhos',
+                                49.90,
+                                'imagens/Canolli(canudinhos).jpg')">
+
                             Adicionar ao Carrinho
+
                         </button>
 
                     </div>
@@ -110,7 +118,7 @@
 
                 <div class="card-cardapio">
 
-                    <img src="imagens/Panna-Cotta.jpg" alt="Fettuccine">
+                    <img src="imagens/Panna-Cotta.jpg" alt="Panna Cotta">
 
                     <div class="card-info">
 
@@ -120,8 +128,15 @@
                             R$ 54,90
                         </p>
 
-                        <button class="botao-card">
+                        <button class="botao-card"
+                                onclick="adicionarCarrinho(
+                                8,
+                                'Panna Cotta',
+                                54.90,
+                                'imagens/Panna-Cotta.jpg')">
+
                             Adicionar ao Carrinho
+
                         </button>
 
                     </div>
@@ -130,7 +145,7 @@
 
                 <div class="card-cardapio">
 
-                    <img src="imagens/Tiramisú.jpg" alt="Lasanha">
+                    <img src="imagens/Tiramisú.jpg" alt="Tiramisú">
 
                     <div class="card-info">
 
@@ -140,8 +155,15 @@
                             R$ 59,90
                         </p>
 
-                        <button class="botao-card">
+                        <button class="botao-card"
+                                onclick="adicionarCarrinho(
+                                9,
+                                'Tiramisú',
+                                59.90,
+                                'imagens/Tiramisú.jpg')">
+
                             Adicionar ao Carrinho
+
                         </button>
 
                     </div>
@@ -165,6 +187,24 @@
         </p>
 
     </footer>
+
+    <div class="mini-carrinho">
+
+        <a href="pedido.html">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <span id="contador-carrinho">
+
+                0
+
+            </span>
+
+        </a>
+
+    </div>
+
+    <script src="carrinho.js"></script>
 
 </body>
 
