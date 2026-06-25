@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sobremesas | Villa Imperialle</title>
+</head>
+
+<body>
+
+    <header class="menu">
+
+        <img src="imagens/villa-imperialle.png" alt="Villa Imperialle" class="logo">
+
+        <nav class="menu-links">
+
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                INÍCIO
+            </a>
+
+            <a href="index.html#vendidos">
+                <i class="fa-solid fa-star"></i>
+                MAIS VENDIDOS
+            </a>
+
+            <a href="index.html#sobre">
+                <i class="fa-solid fa-circle-info"></i>
+                SOBRE NÓS
+            </a>
+
+            <a href="cardapio-massas.html">
+                <i class="fa-solid fa-utensils"></i>
+                CARDÁPIO
+            </a>
+
+        </nav>
+
+    </header>
+
+    <section class="banner-cardapio">
+
+        <img src="imagens/banner.png" alt="Banner Villa Imperialle">
+
+        <div class="banner-texto">
+
+            <h1>Sobremesas</h1>
+
+            <p>
+                Receitas italianas tradicionais preparadas com ingredientes selecionados.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="area-cardapio">
+
+        <aside class="categorias">
+
+            <div class="categoria-ativa">
+                Sobremesas
+            </div>
+
+            <a href="cardapio-massas.html">Massas</a>
+            <a href="cardapio-pizzas.html">Pizzas</a>
+            <a href="cardapio-sobremesas.html">Sobremesas</a>
+            <a href="cardapio-bebidas.html">Bebidas</a>
+
+            <a href="pedido.html" class="botao">
+                Ver Pedido
+            </a>
+
+        </aside>
+
+        <main class="area-pratos">
+
+            <div class="topo-pratos">
+
+                <h2>SOBREMESAS</h2>
+
+            </div>
+
+            <div class="grid-pratos">
+
+                <div class="card-cardapio">
+
+                    <img src="imagens/Canolli(canudinhos).jpg" alt="Canolli canudinhos">
+
+                    <div class="card-info">
+
+                        <h3>Canolli canudinhos</h3>
+
+                        <p class="preco">
+                            R$ 49,90
+                        </p>
+
+                        <button class="botao-card"
+                                onclick="adicionarCarrinho(
+                                7,
+                                'Canolli canudinhos',
+                                49.90,
+                                'imagens/Canolli(canudinhos).jpg')">
+
+                            Adicionar ao Carrinho
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="card-cardapio">
+
+                    <img src="imagens/Panna-Cotta.jpg" alt="Panna Cotta">
+
+                    <div class="card-info">
+
+                        <h3>Panna Cotta</h3>
+
+                        <p class="preco">
+                            R$ 54,90
+                        </p>
+
+                        <button class="botao-card"
+                                onclick="adicionarCarrinho(
+                                8,
+                                'Panna Cotta',
+                                54.90,
+                                'imagens/Panna-Cotta.jpg')">
+
+                            Adicionar ao Carrinho
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="card-cardapio">
+
+                    <img src="imagens/Tiramisú.jpg" alt="Tiramisú">
+
+                    <div class="card-info">
+
+                        <h3>Tiramisú</h3>
+
+                        <p class="preco">
+                            R$ 59,90
+                        </p>
+
+                        <button class="botao-card"
+                                onclick="adicionarCarrinho(
+                                9,
+                                'Tiramisú',
+                                59.90,
+                                'imagens/Tiramisú.jpg')">
+
+                            Adicionar ao Carrinho
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </section>
+
+    <footer>
+
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-whatsapp"></i>
+        <i class="fa-brands fa-facebook"></i>
+
+        <p class="texto-footer">
+            © Villa Imperialle. Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+    <div class="mini-carrinho">
+
+        <a href="pedido.html">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <span id="contador-carrinho">
+
+                0
+
+            </span>
+
+        </a>
+
+    </div>
+
+    <script src="carrinho.js"></script>
+
+</body>
+
+</html>
