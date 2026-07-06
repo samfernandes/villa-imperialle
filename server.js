@@ -1,68 +1,147 @@
-let carrinho =
-    JSON.parse(
-        localStorage.getItem("carrinho")
-    ) || [];
+const express = require("express");
+const mysql = require("mysql2");
+const cors = require("cors");
+const app = express();
 
-function adicionarCarrinho(id, nome, preco, imagem) {
+app.use(express.json());
+app.use(cors());
 
-    let itemExistente =
-        carrinho.find(
-            item => item.id === id
-        );
+const conexao = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "root",
+    database: "villa_imperialle"
+});
 
-    if (itemExistente) {
+conexao.connect((erro) => {
+    if (erro) throw erro;
+    console.log("Banco conectado.");
+});
 
-        itemExistente.quantidade++;
+app.post("/pedido", (req, res) => {
+    console.log(req.body);
+    const pedido = req.body;
 
-    } else {
+    conexao.query(
+        `INSERT INTO pedido
+        (nome_cliente, telefone, endereco, valor_total)
+        VALUES (?, ?, ?, ?)`,
+        [
+            pedido.nome,
+            pedido.telefone,
+            pedido.endereco,
+            pedido.valor_total
+        ],
+        (erro, resultado) => {
 
-        carrinho.push({
+            if (erro) {
+                console.log(erro);
+                return res.status(500).json({ sucesso: false });
+            }
 
-            id: id,
-            nome: nome,
-            preco: preco,
-            imagem: imagem,
-            quantidade: 1
+            const pedidoId = resultado.insertId;
+            atualizarStatusAutomatico(pedidoId);
+            let restantes = pedido.itens.length;
 
-        });
+            if (restantes === 0) {
+                return res.json({
+                    sucesso: true,
+                    pedidoId
+                });
+            }
 
-    }
+            pedido.itens.forEach(item => {
 
-    localStorage.setItem(
-        "carrinho",
-        JSON.stringify(carrinho)
+                conexao.query(
+                    `INSERT INTO item_pedido
+        (pedido_id, prato_id, quantidade, preco_unitario, observacao)
+        VALUES (?, ?, ?, ?, ?)`,
+                    [
+                        pedidoId,
+                        item.id,
+                        item.quantidade,
+                        item.preco,
+                        item.observacao || ""
+                    ],
+                    (erro) => {
+
+                        if (erro) {
+                            console.log(erro);
+                            return;
+                        }
+
+                        restantes--;
+
+                        if (restantes === 0) {
+                            res.json({
+                                sucesso: true,
+                                pedidoId
+                            });
+                        }
+                    }
+                );
+
+            });
+        }
     );
 
-    atualizarMiniCarrinho();
+});
 
-    alert(nome + " foi adicionado ao carrinho!");
+app.get("/pedido/:id", (req, res) => {
 
-}
+    const id = req.params.id;
 
-function atualizarMiniCarrinho() {
+    conexao.query(
+        `SELECT
+            id,
+            nome_cliente,
+            valor_total,
+            status,
+            data_pedido
+        FROM pedido
+        WHERE id = ?`,
+        [id],
+        (erro, resultado) => {
 
-    let contador =
-        document.getElementById(
-            "contador-carrinho"
+            if (erro)
+                return res.status(500).json(erro);
+
+            if (resultado.length === 0)
+                return res.status(404).json({
+                    erro: "Pedido não encontrado."
+                });
+
+            res.json(resultado[0]);
+
+        }
+    );
+
+});
+
+function atualizarStatusAutomatico(pedidoId) {
+
+    setTimeout(() => {
+        conexao.query(
+            "UPDATE pedido SET status = 'Preparando' WHERE id = ?",
+            [pedidoId]
         );
+    }, 30000);
 
-    if (!contador) {
+    setTimeout(() => {
+        conexao.query(
+            "UPDATE pedido SET status = 'Saiu para entrega' WHERE id = ?",
+            [pedidoId]
+        );
+    }, 60000);
 
-        return;
-
-    }
-
-    let quantidadeTotal = 0;
-
-    carrinho.forEach(item => {
-
-        quantidadeTotal += item.quantidade;
-
-    });
-
-    contador.textContent =
-        quantidadeTotal;
-
+    setTimeout(() => {
+        conexao.query(
+            "UPDATE pedido SET status = 'Entregue' WHERE id = ?",
+            [pedidoId]
+        );
+    }, 90000);
 }
 
-atualizarMiniCarrinho();
+app.listen(3000, () => {
+    console.log("Servidor rodando.");
+});

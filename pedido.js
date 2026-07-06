@@ -58,7 +58,7 @@ function carregarPedido() {
 
 }
 
-function aumentar(indice){
+function aumentar(indice) {
 
     carrinho[indice].quantidade++;
 
@@ -66,9 +66,9 @@ function aumentar(indice){
 
 }
 
-function diminuir(indice){
+function diminuir(indice) {
 
-    if(carrinho[indice].quantidade > 1){
+    if (carrinho[indice].quantidade > 1) {
 
         carrinho[indice].quantidade--;
 
@@ -78,15 +78,15 @@ function diminuir(indice){
 
 }
 
-function remover(indice){
+function remover(indice) {
 
-    carrinho.splice(indice,1);
+    carrinho.splice(indice, 1);
 
     salvar();
 
 }
 
-function salvar(){
+function salvar() {
 
     localStorage.setItem(
         "carrinho",
@@ -97,34 +97,69 @@ function salvar(){
 
 }
 
-function finalizarPedido(){
+async function finalizarPedido() {
 
-    const nome =
-        document.getElementById("nome").value;
+    const nome = document.getElementById("nome").value;
+    const telefone = document.getElementById("telefone").value;
+    const endereco = document.getElementById("endereco").value;
 
-    const telefone =
-        document.getElementById("telefone").value;
-
-    const endereco =
-        document.getElementById("endereco").value;
-
-    if(
-        nome === "" ||
-        telefone === "" ||
-        endereco === ""
-    ){
-
+    if (!nome || !telefone || !endereco) {
         alert("Preencha todos os campos.");
-
         return;
-
     }
 
-    alert("Pedido realizado com sucesso!");
+    let valor_total = 0;
 
-    localStorage.removeItem("carrinho");
+    carrinho.forEach(item => {
+        valor_total += item.preco * item.quantidade;
+    });
 
-    window.location.href = "index.html";
+    const pedido = {
+        nome,
+        telefone,
+        endereco,
+        valor_total,
+        itens: carrinho
+    };
+
+    try {
+    
+    console.log(pedido);
+    const resposta = await fetch("http://localhost:3000/pedido", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+    },
+    body: JSON.stringify(pedido)
+    });
+
+        if (!resposta.ok) {
+            throw new Error("Erro ao salvar o pedido.");
+        }
+
+        const resultado = await resposta.json();
+
+        if (resultado.sucesso) {
+
+            alert("Pedido realizado com sucesso!");
+
+            localStorage.removeItem("carrinho");
+
+            window.location.href = `status.html?id=${resultado.pedidoId}`;
+
+        } else {
+
+            alert("Erro ao salvar o pedido.");
+
+        }
+
+    } catch (erro) {
+
+        console.error(erro);
+
+        alert("Erro ao conectar com o servidor.");
+
+    }
 
 }
 
