@@ -2,31 +2,71 @@
 <html lang="pt-BR">
 
 <head>
-
-<meta charset="UTF-8">
-
-<title>Status do Pedido</title>
-
-<link rel="stylesheet" href="status.css">
-
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="status.css">
+    <title>Status do Pedido</title>
 </head>
 
 <body>
 
-<h1>🍝 Villa Imperialle</h1>
+<div class="container">
 
-<h2>Status do Pedido</h2>
+    <h1>🍝 Villa Imperialalle</h1>
 
-<p id="numero"></p>
+    <h2>Acompanhe seu pedido</h2>
 
-<p id="cliente"></p>
+    <div class="pedido-card">
+    <div id="numero" class="info-topo"></div>
+    <div id="cliente" class="info-cliente"></div>
+    <div id="valor" class="info-valor"></div>
+    <div id="endereco" class="info-endereco"></div>
+</div>
 
-<p id="valor"></p>
+    <div class="timeline">
 
-<p id="status"></p>
+        <div class="etapa">
+            <div class="circulo ativo" id="c1"></div>
+            <span>Recebido</span>
+        </div>
+
+        <div class="linha"></div>
+
+        <div class="etapa">
+            <div class="circulo" id="c2"></div>
+            <span>Preparo</span>
+        </div>
+
+        <div class="linha"></div>
+
+        <div class="etapa">
+            <div class="circulo" id="c3"></div>
+            <span>Entrega</span>
+        </div>
+
+        <div class="linha"></div>
+
+        <div class="etapa">
+            <div class="circulo" id="c4"></div>
+            <span>Finalizado</span>
+        </div>
+
+    </div>
+
+    <div class="barra">
+        <div id="progresso"></div>
+    </div>
+
+    <div id="status"></div>
+
+</div>
 
 <script src="status.js"></script>
 
 </body>
-
 </html>
